@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="14_mvc_bbs">
+            
+    
+    <wb-module deploy-name="90_mvc_bbs">
+                        
+        
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+                        
+        
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="14_mvc_bbs"/>
-        <property name="java-output-path" value="/14_mvc_bbs/build/classes"/>
+                        
+        
+        <property name="java-output-path" value="/90_mvc_bbs/build/classes"/>
+        <property name="context-root" value="90_mvc_bbs"/>
+                    
+    
     </wb-module>
+        
+
 </project-modules>

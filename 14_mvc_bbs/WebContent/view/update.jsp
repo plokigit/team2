@@ -48,15 +48,8 @@
 		location.href="${pageContext.request.contextPath }/MyController?cmd=list&cPage=${cPage}"
 	}
 	function update_ok(f) {
-		if("${bvo.pwd}"==f.pwd.value){
-			f.action="${pageContext.request.contextPath }/MyController?cmd=update_ok&cPage=${cPage}";
-			f.submit();
-		}else{
-			alert("wrong pw");
-			f.pw.value="";
-			f.pw.focus();
-			return;
-		}
+		f.action="${pageContext.request.contextPath }/MyController?cmd=update_ok&cPage=${cPage}";
+		f.submit();
 	}
 	function remove(f) {
 		f.old_file_name.value="";
@@ -75,8 +68,7 @@
 					<td><input type="text" name="subject" size="45" value="${bvo.subject }"></td>
 				</tr>
 				<tr>
-					<th>이름:</th>
-					<td><input type="text" name="writer" size="12" value="${bvo.writer }"></td>
+					<td><input type="hidden" name="writer" size="12" value="${id }"></td>
 				</tr>
 				<tr>
 					<th>내용:</th>
@@ -93,10 +85,6 @@
 					이전 파일: <input type="text" name="old_file_name" value="${bvo.file_name }" readonly>
 							<input type="button" value="X" onclick="remove(this.form)">
 					</td>
-				</tr>
-				<tr>
-					<th>비밀번호:</th>
-					<td><input type="password" name="pwd" size="12"/></td>
 				</tr>
 				<tr>
 					<td colspan="2">

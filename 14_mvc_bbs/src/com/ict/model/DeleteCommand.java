@@ -10,7 +10,7 @@ public class DeleteCommand implements Command {
 		String cPage = request.getParameter("cPage");
 		request.setAttribute("cPage", cPage);
 		
-		return "view/delete.jsp";
+		return "MyController?cmd=delete_ok&cPage="+cPage;
 	}
 
 }

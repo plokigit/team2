@@ -48,9 +48,9 @@
 		location.href="${pageContext.request.contextPath }/MyController?cmd=list"
 	}
 	function send_go(f) {
-		for (var i = 0; i < f.elements.length; i++) {
+		for (var i = 5; i < f.elements.length; i++) {
 			if(f.elements[i].value==""){
-				if(i==2||i==3) {continue;}
+				if(i==1||i==2||i==3||i==4) {continue;}
 				alert(f.elements[i].name+" is null");
 				f.elements[i].focus();
 				return;
@@ -72,8 +72,7 @@
 					<td><input type="text" name="subject" size="45"/></td>
 				</tr>
 				<tr>
-					<th>이름:</th>
-					<td><input type="text" name="writer" size="12"/></td>
+					<td><input type="hidden" name="writer" value="${id }"/></td>
 				</tr>
 				<tr>
 					<th>내용:</th>
@@ -89,13 +88,12 @@
 					<td><input type="file" name="file_name"/></td>
 				</tr>
 				<tr>
-					<th>비밀번호:</th>
-					<td><input type="password" name="pwd" size="12"/></td>
+					<td><input type="hidden" name="pwd" value="${pw }" /></td>
 				</tr>
 				<tr>
 					<td colspan="2">
 						<input type="button" value="목록" onclick="list_go()"/>
-						<input type="reset" value="다시"/>
+						<input type="reset" value="지우기"/>
 						<input type="button" value="글쓰기" onclick="send_go(this.form)"/>
 					</td>
 				</tr>

@@ -21,6 +21,8 @@ div {
 window.onload = function(){
 	if(${fail}==1){
 		alert("로그인 실패");
+		fail=0;
+		document.getElementById("id").focus();
 	}
 }
 	function join_go(f) {
@@ -35,7 +37,7 @@ window.onload = function(){
 			<fieldset>
 				<legend>로그인</legend>
 				<p>
-					아이디 : <input type="text" name="id" placeholder="id를 입력하세요" required>
+					아이디 : <input type="text" id="id" name="id" placeholder="id를 입력하세요" required>
 				</p>
 				<p>
 					패스워드 : <input type="password" name="pw" placeholder="pw를 입력하세요" required>

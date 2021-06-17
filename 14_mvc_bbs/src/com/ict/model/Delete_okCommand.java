@@ -21,7 +21,7 @@ public class Delete_okCommand implements Command {
 			BVO bvo = (BVO) request.getSession().getAttribute("bvo");
 			
 //			방법2> 원글 안의 댓글을 먼저 전부 삭제
-			DAO.getReply_delete_all(bvo.getB_idx());
+			DAO.getComment_delete_all(bvo.getB_idx());
 			
 			
 //			원글 삭제

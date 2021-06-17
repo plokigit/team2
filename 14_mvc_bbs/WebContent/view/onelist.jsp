@@ -48,27 +48,42 @@
 	.odd {background:silver}
 </style>
 <script type="text/javascript">
+	window.onload = function(){
+		if(${id==bvo.writer}){
+			for (var i = 0; i < document.getElementsByClassName("editbtn").length; i++) {
+				document.getElementsByClassName("editbtn")[i].style.display="inline-block";				
+			}
+		}
+	}
 	
 	function list_go() {
 		location.href="${pageContext.request.contextPath }/MyController?cmd=list&cPage=${cPage}"
 	}
 	function update_go() {
+		if(${id==bvo.writer}) {
 		location.href="${pageContext.request.contextPath }/MyController?cmd=update&cPage=${cPage}"
+		}
 	}
 	function delete_go() {
-		location.href="${pageContext.request.contextPath }/MyController?cmd=delete&cPage=${cPage}"
+		var del_ok = confirm("정말 삭제하시겠습니까?");
+		if(del_ok && ${id==bvo.writer}) {
+			location.href="${pageContext.request.contextPath }/MyController?cmd=delete&cPage=${cPage}"
+		}
 	}
-	function reply_write(f) {
-		f.action="${pageContext.request.contextPath }/MyController?cmd=reply_write"
+	function comment_write(f) {
+		f.action="${pageContext.request.contextPath }/MyController?cmd=comment_write"
 		f.submit();
 	}
-	function reply_del(f) {
-		f.action = "${pageContext.request.contextPath }/MyController?cmd=reply_delete"
+	function comment_del(f) {
+		f.action = "${pageContext.request.contextPath }/MyController?cmd=comment_delete"
 		f.submit();
 	}
+	
 </script>
 </head>
 <body>
+	id: ${id }
+	pw: ${pw }
 	<div class="bbs">
 	<form method="post">
 		<table summary="글 보기">
@@ -105,8 +120,8 @@
 					<td colspan="1" style="text-align: left">
 						<input type="button" value="목록" onclick="list_go()">
 					<td colspan="2" style="text-align: right">
-						<input type="button" value="수정" onclick="update_go()">
-						<input type="button" value="삭제" onclick="delete_go()">
+						<input type="button" class="editbtn" value="수정" onclick="update_go()" style="display:none;">
+						<input type="button" class="editbtn" value="삭제" onclick="delete_go()" style="display:none;">
 					</td>
 				</tr>
 			</tbody>
@@ -131,8 +146,9 @@
 							<tbody>
 								<tr>
 									<td><textarea rows="4" cols="70" name="content" readonly>${i.content }</textarea></td>
-									<td><input type="button" value="삭제"
-										onclick="reply_del(this.form)"></td>
+									<td>
+									</td>
+									<td><input type="button" value="삭제" onclick="comment_del(this.form)"></td>
 									<td><input type="hidden" name="c_idx" value="${i.c_idx }"></td>
 									<td><input type="hidden" name="b_idx" value="${i.b_idx }"></td>
 								</tr>
@@ -150,7 +166,8 @@
 				<tbody>
 					<tr>
 						<td><textarea rows="4" cols="70" name="content"></textarea></td>
-						<td><input type="button" value="댓글" onclick="reply_write(this.form)"></td>
+						<td><input type="button" value="댓글" onclick="comment_write(this.form)"></td>
+						<td><input type="hidden" name="id" value="${id }"></td>
 					</tr>
 				</tbody>
 			</table>

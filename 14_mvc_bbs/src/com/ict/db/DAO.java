@@ -62,9 +62,9 @@ public class DAO {
 		return result;
 	}
 
-	public static int getReply_delete_all(String b_idx) { // 원글 밑의 댓글 모두 삭제
+	public static int getComment_delete_all(String b_idx) { // 원글 밑의 댓글 모두 삭제
 		int result = 0;
-		result = getSession().delete("reply_delete_all", b_idx);
+		result = getSession().delete("comment_delete_all", b_idx);
 		ss.commit();
 
 		return result;
@@ -93,17 +93,17 @@ public class DAO {
 		return c_list;
 	}
 
-	public static int getReply_write(CVO cvo) {
+	public static int getComment_write(CVO cvo) {
 		int result = 0;
-		result = getSession().insert("reply_write", cvo);
+		result = getSession().insert("comment_write", cvo);
 		ss.commit();
 
 		return result;
 	}
 
-	public static int getReply_delete(String c_idx) {
+	public static int getComment_delete(String c_idx) {
 		int result = 0;
-		result = getSession().delete("reply_delete", c_idx);
+		result = getSession().delete("comment_delete", c_idx);
 		ss.commit();
 
 		return result;

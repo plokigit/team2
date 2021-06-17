@@ -25,6 +25,9 @@ public class ListCommand implements Command {
 		}
 
 		String cPage = request.getParameter("cPage"); // 현재 페이지 위치, listCommand에 cPage를 반드시 넣어야 함
+		if(cPage=="") {
+			cPage = "1";
+		}
 		pvo.setNowPage(Integer.parseInt(cPage));
 
 		pvo.setBegin((pvo.getNowPage() - 1) * pvo.getNumPerPage() + 1); // 페이지 안의 게시글 시작 번호 구하기

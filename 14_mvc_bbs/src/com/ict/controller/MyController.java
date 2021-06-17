@@ -16,8 +16,8 @@ import com.ict.model.ListCommand;
 import com.ict.model.LoginCommand;
 import com.ict.model.Login_okCommand;
 import com.ict.model.OnelistCommand;
-import com.ict.model.Reply_deleteCommand;
-import com.ict.model.Reply_writeCommand;
+import com.ict.model.Comment_deleteCommand;
+import com.ict.model.Comment_writeCommand;
 import com.ict.model.UpdateCommand;
 import com.ict.model.Update_okCommand;
 import com.ict.model.WriteCommand;
@@ -57,10 +57,10 @@ public class MyController extends HttpServlet {
 			comm = new DeleteCommand();
 		} else if (cmd.equalsIgnoreCase("delete_ok")) {
 			comm = new Delete_okCommand();
-		} else if (cmd.equalsIgnoreCase("reply_write")) {
-			comm = new Reply_writeCommand();
-		} else if (cmd.equalsIgnoreCase("reply_delete")) {
-			comm = new Reply_deleteCommand();
+		} else if (cmd.equalsIgnoreCase("comment_write")) {
+			comm = new Comment_writeCommand();
+		} else if (cmd.equalsIgnoreCase("comment_delete")) {
+			comm = new Comment_deleteCommand();
 		} else if (cmd.equalsIgnoreCase("login")) {
 			comm = new LoginCommand();
 		} else if (cmd.equalsIgnoreCase("login_ok")) {

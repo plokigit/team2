@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset=UTF-8>
-<title>Insert title here</title>
+<title>목록</title>
 <style type="text/css">
 #bbs table {
 	width:700px;
