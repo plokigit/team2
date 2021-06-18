@@ -146,9 +146,14 @@
 							<tbody>
 								<tr>
 									<td><textarea rows="4" cols="70" name="content" readonly>${i.content }</textarea></td>
-									<td>
-									</td>
-									<td><input type="button" value="삭제" onclick="comment_del(this.form)"></td>
+									<c:choose>
+										<c:when test="${id!=i.writer}">
+										<td><input type="button" value="삭제" onclick="comment_del(this.form)" style="display:none;"></td>
+										</c:when>
+										<c:otherwise>
+										<td><input type="button" value="삭제" onclick="comment_del(this.form)"></td>
+										</c:otherwise>
+									</c:choose>
 									<td><input type="hidden" name="c_idx" value="${i.c_idx }"></td>
 									<td><input type="hidden" name="b_idx" value="${i.b_idx }"></td>
 								</tr>
