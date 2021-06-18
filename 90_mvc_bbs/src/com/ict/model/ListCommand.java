@@ -25,7 +25,7 @@ public class ListCommand implements Command {
 		}
 
 		String cPage = request.getParameter("cPage"); // 현재 페이지 위치, listCommand에 cPage를 반드시 넣어야 함
-		if(cPage==null) {
+		if (cPage == null || cPage == "") {
 			cPage = "1";
 		}
 		pvo.setNowPage(Integer.parseInt(cPage));
@@ -33,15 +33,17 @@ public class ListCommand implements Command {
 		pvo.setBegin((pvo.getNowPage() - 1) * pvo.getNumPerPage() + 1); // 페이지 안의 게시글 시작 번호 구하기
 		pvo.setEnd((pvo.getBegin() - 1) + pvo.getNumPerPage()); // 페이지 안의 게시글 끝 번호 구하기
 		List<BVO> list = DAO.getList(pvo.getBegin(), pvo.getEnd());
-		
-		pvo.setBeginBlock((int)(pvo.getNowPage()-1)/pvo.getPagePerBlock()*pvo.getPagePerBlock()+1); // 블록의 시작 페이지 구하기
-		pvo.setEndBlock(pvo.getBeginBlock()+pvo.getPagePerBlock()-1);
-		
+
+		pvo.setBeginBlock((int) (pvo.getNowPage() - 1) / pvo.getPagePerBlock() * pvo.getPagePerBlock() + 1); // 블록의 시작
+																												// 페이지
+																												// 구하기
+		pvo.setEndBlock(pvo.getBeginBlock() + pvo.getPagePerBlock() - 1);
+
 //		endBlock이 totalPage보다 클 수 있음
 		if (pvo.getEndBlock() > pvo.getTotalPage()) {
 			pvo.setEndBlock(pvo.getTotalPage());
 		}
-		
+
 		request.setAttribute("list", list);
 		request.setAttribute("pvo", pvo);
 
