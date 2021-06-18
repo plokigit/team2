@@ -81,11 +81,31 @@ table tfoot ol.paging li a:hover {
 	function write_go() {
 		location.href="${pageContext.request.contextPath }/MyController?cmd=write";
 	}
+	function logout() {
+		location.href="${pageContext.request.contextPath }/MyController?cmd=logout";
+	}
+	function login() {
+		location.href="${pageContext.request.contextPath }/MyController?cmd=login";
+	}
 </script>
 </head>
 <body>
+	<%
+		request.getSession(false);
+	%>
+	<div style="text-align:right;margin-right:20%;">
+	session - 
 	id: ${id }
-	pw: ${pw }
+	pw: ${pw } &nbsp;
+	<c:choose>
+		<c:when test="${empty id }">
+			<button onclick="login()">로그인</button>
+		</c:when>
+		<c:otherwise>
+			<button onclick="logout()">로그아웃</button>
+		</c:otherwise>
+	</c:choose>
+	</div>
 	<div id="bbs" align="center">
 		<table summary="게시판 목록">
 			<caption>게시판 목록</caption>

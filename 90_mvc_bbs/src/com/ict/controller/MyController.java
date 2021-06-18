@@ -12,9 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 import com.ict.model.Command;
 import com.ict.model.DeleteCommand;
 import com.ict.model.Delete_okCommand;
+import com.ict.model.JoinCommand;
+import com.ict.model.Join_okCommand;
 import com.ict.model.ListCommand;
 import com.ict.model.LoginCommand;
 import com.ict.model.Login_okCommand;
+import com.ict.model.LogoutCommand;
 import com.ict.model.OnelistCommand;
 import com.ict.model.Comment_deleteCommand;
 import com.ict.model.Comment_writeCommand;
@@ -65,6 +68,12 @@ public class MyController extends HttpServlet {
 			comm = new LoginCommand();
 		} else if (cmd.equalsIgnoreCase("login_ok")) {
 			comm = new Login_okCommand();
+		} else if (cmd.equalsIgnoreCase("logout")) {
+			comm = new LogoutCommand();
+		} else if (cmd.equalsIgnoreCase("join")) {
+			comm = new JoinCommand();
+		} else if (cmd.equalsIgnoreCase("join_ok")) {
+			comm = new Join_okCommand();
 		}
 		String path = comm.exec(request, response);
 		request.getRequestDispatcher(path).forward(request, response);

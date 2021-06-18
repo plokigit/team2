@@ -6,6 +6,10 @@
 	<select id="login" resultType="com.ict.db.BVO">
 		select * from bbs_t where writer=#{writer} and pwd=#{pwd}
 	</select>
+	
+	<insert id="join" parameterType="com.ict.db.BVO">
+		insert into bbs_t values(bbs_t_seq.nextval,#{subject},#{writer},null,null,#{pwd},sysdate,#{hit})
+	</insert>
 
 	<!-- <select id="list" resultType="com.ict.db.BVO">
 		select * from bbs_t order by b_idx desc
@@ -25,28 +29,28 @@
 	<select id="detail" parameterType="String" resultType="com.ict.db.BVO">
 		select * from bbs_t where b_idx=#{b_idx}
 	</select>
-	<select id="write" parameterType="com.ict.db.BVO">
+	<insert id="write" parameterType="com.ict.db.BVO">
 		insert into bbs_t values(bbs_t_seq.nextval,#{subject},#{writer},#{content},#{file_name},#{pwd},sysdate,#{hit})
-	</select>
-	<select id="update" parameterType="com.ict.db.BVO">
+	</insert>
+	<update id="update" parameterType="com.ict.db.BVO">
 		update bbs_t set subject=#{subject}, writer=#{writer}, content=#{content}, file_name=#{file_name} where b_idx=#{b_idx}
-	</select>
-	<select id="delete" parameterType="com.ict.db.BVO">
+	</update>
+	<delete id="delete" parameterType="com.ict.db.BVO">
 		delete from bbs_t where b_idx=#{b_idx}
-	</select>
-	<select id="hitup" parameterType="String">
+	</delete>
+	<update id="hitup" parameterType="String">
 		update bbs_t set hit=hit+1 where b_idx=#{b_idx}
-	</select>
+	</update>
 	<select id="c_list" parameterType="String" resultType="com.ict.db.CVO">
 		select * from comment_t where b_idx=#{b_idx} order by c_idx asc
 	</select>
-	<select id="comment_write" parameterType="com.ict.db.CVO">
+	<insert id="comment_write" parameterType="com.ict.db.CVO">
 		insert into comment_t values(comment_t_seq.nextval,#{writer},#{content},null,sysdate,#{b_idx})
-	</select>
-	<select id="comment_delete" parameterType="String">
+	</insert>
+	<delete id="comment_delete" parameterType="String">
 		delete from comment_t where c_idx=#{c_idx}
-	</select>
-	<select id="comment_delete_all" parameterType="String">
+	</delete>
+	<delete id="comment_delete_all" parameterType="String">
 		delete from comment_t where b_idx=#{b_idx}
-	</select>
+	</delete>
 </mapper>

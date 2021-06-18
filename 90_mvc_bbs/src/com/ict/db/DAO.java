@@ -117,4 +117,12 @@ public class DAO {
 		return result;
 	}
 
+	public static int getJoin(BVO bvo) {
+		int result = 0;
+		result = getSession().insert("join", bvo);
+		ss.commit();
+
+		return result;
+	}
+
 }

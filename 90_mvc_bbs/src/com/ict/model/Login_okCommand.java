@@ -29,8 +29,7 @@ public class Login_okCommand implements Command {
 			}
 		}
 		
-		int fail=1;
-		request.setAttribute("fail", fail);
+		request.setAttribute("fail", "아이디 혹은 비밀번호가 틀렸거나 회원이 아닙니다.");
 		return "MyController?cmd=login";
 	}
 }

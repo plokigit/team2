@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>로그인</title>
 <style type="text/css">
 fieldset {
 	width: 300px;
@@ -18,34 +18,36 @@ div {
 }
 </style>
 <script type="text/javascript">
-window.onload = function(){
-	if(${fail}==1){
-		alert("로그인 실패");
-		fail=0;
-		document.getElementById("id").focus();
-	}
-}
-	function join_go(f) {
-		f.action="join.jsp";
-		f.submit();
+	function join_go() {
+		location.href="${pageContext.request.contextPath }/MyController?cmd=join";
 	}
 </script>
 </head>
 <body>
+<div style="text-align:right;margin-right:20%;">
+<%
+		request.getSession(true);
+	%>
+session - 
+	id: ${id }
+	pw: ${pw } &nbsp;
+</div>
 	<div>
-		<form action="${pageContext.request.contextPath }/MyController?cmd=login_ok" method="post">
+	${fail }
+	<br><br>
 			<fieldset>
 				<legend>로그인</legend>
+		<form method="post" action="${pageContext.request.contextPath }/MyController?cmd=login_ok">
 				<p>
 					아이디 : <input type="text" id="id" name="id" placeholder="id를 입력하세요" required>
 				</p>
 				<p>
 					패스워드 : <input type="password" name="pw" placeholder="pw를 입력하세요" required>
 				</p>
-				<input type="submit" value="로그인">&nbsp;&nbsp;&nbsp; 
-				<input type="button" value="회원가입" onclick="join_go(this.form)">
-			</fieldset>
+				<input type="submit" value="로그인" onclick="login_go(this.form)">&nbsp;&nbsp;&nbsp; 
+				<button onclick="join_go()">회원가입</button>
 		</form>
+			</fieldset>
 	</div>
 </body>
 </html>
