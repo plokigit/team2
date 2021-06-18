@@ -62,6 +62,9 @@
 </script>
 </head>
 <body>
+session - 
+	id: ${id }
+	pw: ${pw } &nbsp;
 	<div id="bbs">
 	<form method="post" encType="multipart/form-data">
 		<table summary="게시판 글쓰기">
