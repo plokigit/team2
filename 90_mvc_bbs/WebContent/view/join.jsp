@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,6 +27,14 @@ div {
 </head>
 <body>
 	<div id="bbs">
+	<c:choose>
+		<c:when test="${!empty fail }">
+		<script type="text/javascript">
+		alert("${fail }");
+		location.href="${pageContext.request.contextPath }/MyController?cmd=login"
+		</script>
+		</c:when>
+	</c:choose>
 		<form method="post" action="${pageContext.request.contextPath }/MyController?cmd=join_ok">
 			<fieldset>
 				<legend>회원가입</legend>
