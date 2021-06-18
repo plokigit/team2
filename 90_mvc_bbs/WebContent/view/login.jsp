@@ -29,9 +29,6 @@ div {
 <%
 		request.getSession(true);
 	%>
-session - 
-	id: ${id }
-	pw: ${pw } &nbsp;
 </div>
 	<div>
 	${fail }

@@ -94,14 +94,12 @@ table tfoot ol.paging li a:hover {
 		request.getSession(false);
 	%>
 	<div style="text-align:right;margin-right:20%;">
-	session - 
-	id: ${id }
-	pw: ${pw } &nbsp;
 	<c:choose>
 		<c:when test="${empty id }">
 			<button onclick="login()">로그인</button>
 		</c:when>
 		<c:otherwise>
+	${id } 님 환영합니다!&nbsp;
 			<button onclick="logout()">로그아웃</button>
 		</c:otherwise>
 	</c:choose>

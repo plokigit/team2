@@ -82,8 +82,17 @@
 </script>
 </head>
 <body>
-	id: ${id }
-	pw: ${pw }
+	<div style="text-align:right;margin-right:20%;">
+	<c:choose>
+		<c:when test="${empty id }">
+			<button onclick="login()">로그인</button>
+		</c:when>
+		<c:otherwise>
+	${id } 님 환영합니다!&nbsp;
+			<button onclick="logout()">로그아웃</button>
+		</c:otherwise>
+	</c:choose>
+	</div>
 	<div class="bbs">
 	<form method="post">
 		<table summary="글 보기">

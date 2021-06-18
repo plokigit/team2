@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,9 +63,6 @@
 </script>
 </head>
 <body>
-session - 
-	id: ${id }
-	pw: ${pw } &nbsp;
 	<div id="bbs">
 	<form method="post" encType="multipart/form-data">
 		<table summary="게시판 글쓰기">
