@@ -25,7 +25,7 @@ public class ListCommand implements Command {
 		}
 
 		String cPage = request.getParameter("cPage"); // 현재 페이지 위치, listCommand에 cPage를 반드시 넣어야 함
-		if (cPage == null || cPage == "") {
+		if (cPage == null) {
 			cPage = "1";
 		}
 		pvo.setNowPage(Integer.parseInt(cPage));

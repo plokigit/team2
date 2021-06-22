@@ -1,0 +1,31 @@
+  CREATE TABLE bbs2_t(
+        b_idx 	NUMBER(6,0) CONSTRAINT bbs2_t_pk PRIMARY KEY,
+        subject VARCHAR2(50),
+        writer	 VARCHAR2(20),
+        content CLOB,
+        file_name VARCHAR2(50),
+        pwd	  VARCHAR2(20),
+        write_date DATE,
+        hit	   NUMBER(4),
+        m_id  varchar2(50)       
+    );
+
+    CREATE TABLE comment2_t(
+	c_idx 	NUMBER(6,0) CONSTRAINT comm_t2_pk PRIMARY KEY,
+	writer	 VARCHAR2(20),
+	content  CLOB,
+	pwd	  VARCHAR2(20),
+	write_date DATE,
+	b_idx	   NUMBER(6,0),
+    m_id        varchar2(50), 
+	CONSTRAINT comm2_t_fk FOREIGN KEY (b_idx) REFERENCES bbs2_t(b_idx)
+     );
+==========================================================
+ create sequence bbs2_t_seq
+    increment by 1
+    start with 1;
+
+    create sequence comment2_t_seq
+    increment by 1
+    start with 1;
+
