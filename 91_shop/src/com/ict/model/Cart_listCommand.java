@@ -28,6 +28,7 @@ public class Cart_listCommand implements Command {
 
 		request.setAttribute("list", list);
 		request.setAttribute("total", total);
+		request.setAttribute("list_leng", list.size());
 
 		return "view/viewcart.jsp";
 	}
