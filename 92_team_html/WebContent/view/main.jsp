@@ -36,6 +36,7 @@ button {
 header{
 	/* background-color: red; */
 	height:120px;
+	margin-left:-50px;
 }
 #clear{
 	content: "";
@@ -45,14 +46,22 @@ header{
 nav{
 	background-color: lightblue;
 	height:350px;
+	overflow:hidden;
 }
 section{
 	/* background-color: yellow; */
 	height:200px;
 }
+legend{
+	font-weight: bold;
+	font-size: 150%;
+}
+select, input{
+	padding: 10px;
+}
 article{
 	/* background-color: lightgreen; */
-	height:180px;
+	height: 180px;
 	text-align: left;
 	padding: 20px 200px;
 }
@@ -64,7 +73,7 @@ article .notice_title{
 	width:500px;
 }
 footer{
-	background-color: skyblue;
+	/* background-color: skyblue; */
 	height:120px;
 }
 </style>
@@ -72,7 +81,8 @@ footer{
 <body>
 <div id="wrap">
 		<header>
-			<div class="header_div">
+		<%@include file="top.jsp" %>
+			<!-- <div class="header_div">
 				<div style="text-align: center; margin:0px auto;">
 				<div class="logo">
   				<img src="../upload/team_logo.png" alt="HOCANCE" width="300px">
@@ -82,12 +92,12 @@ footer{
 					<button>로그인</button>
 				</div>
 				</div>
-			</div>
+			</div> -->
 		</header>
 		<div id="clear"></div>
 		<nav>
 			<div class="main_image">
-  				<img src="../upload/pic_trulli.jpg" height="350px">
+  				<img src="../upload/pic_trulli.jpg" style="min-width: 100%; min-height: 100%;">
 			</div>
 		</nav>
 		<br>
@@ -95,17 +105,12 @@ footer{
 			<fieldset>
 			<legend style="margin-left:-300px;">검색</legend>
 			<br>
-			지역 <select style="width:150px;"><option>서울</option></select>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			지역 <select style="width:150px; margin-right:100px;"><option>서울</option></select>
 			인원수 성인: <input type="number" style="width:50px;">
 			어린이: <input type="number" style="width:50px;">
-			<br><br><br><br>
-			체크인 <input type="date" style="width:150px;">
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<br><br><br>
+			체크인 <input type="date" style="width:150px; margin-right:120px;">
 			체크아웃 <input type="date" style="width:150px;">
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<br><br>
 			</fieldset>
 		</section>
@@ -128,9 +133,9 @@ footer{
 관광사업자 등록번호 : 제2022-22호 | 주소 : 서울 마포구 어딘가로 222길 22 | 호스팅서비스 제공자 : 주식회사 호캉스
 고객센터 : 1622-2222 (오전 9시 - 익일 새벽 3시)
 		</pre>
+		<div style="width:50px;height:50px;position:fixed;right:20px;bottom:20px;"><a href="#"><img src="../upload/arrow_to_up.png" style="width:50px;height:50px;"></a></div>
 		</footer>
 
-<div style="width:50px;height:50px;position:fixed;right:20px;bottom:20px;font-size:300%;"><a href="#">↑</a></div>
 </div>
 </body>
 </html>

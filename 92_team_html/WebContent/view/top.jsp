@@ -1,47 +1,45 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    pageEncoding="UTF-8"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap"
-	rel="stylesheet">
+<title>Insert title here</title>
 <style type="text/css">
-.header_div {
-width: 1000px; 
-display: inline-block; 
-position: relative; 
-margin-left: 100px;
-}
-button {
-	width: 100px;
-	height: 40px;
-	float: right;
-	margin-right: 30px;
-}
-.logo {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  text-align: center;
-}
+   #log{
+      text-align: right;
+      font-size: 12px;
+   }
+   
+   .title{
+      background-color: black;
+      color:white;
+   }
+   
+   #logo{
+         text-align: center;
+   }
 </style>
 </head>
 <body>
-		<header>
-			<div class="header_div">
-				<div style="text-align: center; margin:0px auto;">
-				<div class="logo">
-  				<img src="../upload/team_logo.png" alt="HOCANCE" width="300px">
-				</div>
-				<div>
-					<button>Reservation Guide</button>
-					<button>로그인</button>
-				</div>
-				</div>
-			</div>
-		</header>
+  <div id="wrap">
+        <div id="log">
+           <c:choose>
+              <c:when test="${login=='ok' }">
+                 @@@님  | 
+                 <a href="/MyController?cmd=logout">로그아웃</a>  | 
+                 <a href="">예약하기</a>  |
+              </c:when>
+              <c:otherwise>
+                 <a href="/MyController?cmd=login">로그인</a>
+              </c:otherwise>
+           </c:choose>
+        </div>
+        
+     <p id="logo">
+        <img src="../upload/team_logo.png" alt="image" width="200px">
+     </p>
+  </div>
 </body>
 </html>
