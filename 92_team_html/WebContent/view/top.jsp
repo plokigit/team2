@@ -10,6 +10,7 @@
    #log{
       text-align: right;
       font-size: 12px;
+      margin-right: 55px;
    }
    
    .title{
@@ -19,11 +20,12 @@
    
    #logo{
          text-align: center;
+         margin-bottom: 50px;
    }
 </style>
 </head>
 <body>
-  <div id="wrap">
+		<header>
         <div id="log">
            <c:choose>
               <c:when test="${login=='ok' }">
@@ -40,6 +42,6 @@
      <p id="logo">
         <img src="../upload/team_logo.png" alt="image" width="200px">
      </p>
-  </div>
+		</header>
 </body>
 </html>

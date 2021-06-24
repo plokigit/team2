@@ -7,7 +7,7 @@
 <title>HOCANCE</title>
 <meta charset="UTF-8">
 <style>
-#wrap {
+.wrap {
 width:1000px;
 text-align: center;
 margin:0 50px;
@@ -15,30 +15,10 @@ margin:0 50px;
 a{
 text-decoration: none;
 }
-.header_div {
-width: 1000px; 
-display: inline-block; 
-position: relative; 
-margin-left: 100px;
-}
-button {
-	width: 100px;
-	height: 40px;
-	float: right;
-	margin-right: 10px;
-}
-.logo {
-  position: absolute;
-  top: 50%;
-  width: 80%;
-  text-align: center;
-}
 header{
 	/* background-color: red; */
-	height:120px;
-	margin-left:-50px;
 }
-#clear{
+.clear{
 	content: "";
   	clear: both;
   	display: table;
@@ -51,6 +31,9 @@ nav{
 section{
 	/* background-color: yellow; */
 	height:200px;
+}
+fieldset{
+	border: 2px solid black;
 }
 legend{
 	font-weight: bold;
@@ -73,28 +56,12 @@ article .notice_title{
 	width:500px;
 }
 footer{
-	/* background-color: skyblue; */
-	height:120px;
 }
 </style>
 </head>
 <body>
-<div id="wrap">
-		<header>
-		<%@include file="top.jsp" %>
-			<!-- <div class="header_div">
-				<div style="text-align: center; margin:0px auto;">
-				<div class="logo">
-  				<img src="../upload/team_logo.png" alt="HOCANCE" width="300px">
-				</div>
-				<div style="margin-right: 120px;">
-					<button>Reservation Guide</button>
-					<button>로그인</button>
-				</div>
-				</div>
-			</div> -->
-		</header>
-		<div id="clear"></div>
+<div class="wrap">
+			<%@include file="top.jsp" %>
 		<nav>
 			<div class="main_image">
   				<img src="../upload/pic_trulli.jpg" style="min-width: 100%; min-height: 100%;">
@@ -119,22 +86,14 @@ footer{
 			<h2>공지사항/이벤트</h2>
 			<div class="notice">
 				<table>
-					<tr><td class="notice_title">공지사항</td><td>2021.02.22</td></tr>
-					<tr><td class="notice_title">공지사항</td><td>2021.02.22</td></tr>
-					<tr><td class="notice_title">공지사항</td><td>2021.02.22</td></tr>
+					<tr><td class="notice_title">공지사항</td><td>2021.02.22.</td></tr>
+					<tr><td class="notice_title">공지사항</td><td>2021.02.22.</td></tr>
+					<tr><td class="notice_title">공지사항</td><td>2021.02.22.</td></tr>
 				</table>
 			</div>
 		</article>
 
-		<footer>
-		<br>
-		<pre>
-(주)호캉스 |대표이사 : 김이박 | 사업자 등록번호 : 222-22-22222 | 통신판매업신고 : 강북-22222호 | 메일 : help@hocance.com
-관광사업자 등록번호 : 제2022-22호 | 주소 : 서울 마포구 어딘가로 222길 22 | 호스팅서비스 제공자 : 주식회사 호캉스
-고객센터 : 1622-2222 (오전 9시 - 익일 새벽 3시)
-		</pre>
-		<div style="width:50px;height:50px;position:fixed;right:20px;bottom:20px;"><a href="#"><img src="../upload/arrow_to_up.png" style="width:50px;height:50px;"></a></div>
-		</footer>
+			<%@include file="footer.jsp" %>
 
 </div>
 </body>
