@@ -8,10 +8,11 @@
 <meta charset="UTF-8">
 <style>
 .wrap {
-width:1000px;
-text-align: center;
-margin:0 50px;
-}
+		margin: 0px auto;
+		width: 1000px;
+		text-align: center;
+		position: relative;
+	}
 a{
 text-decoration: none;
 }
@@ -58,7 +59,7 @@ select, input{
 			<%@include file="top.jsp" %>
 		<nav>
 			<div class="main_image">
-  				<img src="../upload/pic_trulli.jpg" style="min-width: 100%; min-height: 100%;">
+  				<img src="../image/pic_trulli.jpg" style="min-width: 100%; min-height: 100%;">
 			</div>
 		</nav>
 		<br>

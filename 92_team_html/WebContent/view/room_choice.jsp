@@ -81,7 +81,7 @@ select, input{
 		<div class="clear"></div>
 		<nav>
 			<div class="main_image">
-  				<img src="../upload/pic_trulli.jpg" style="min-width: 100%; min-height: 100%;">
+  				<img src="../image/pic_trulli.jpg" style="min-width: 100%; min-height: 100%;">
 			</div>
 			<div class="date_choice">
 				<p>체크인 <input type="date" style="width:150px;"></p>
@@ -92,7 +92,7 @@ select, input{
 		<section>
 			<div class="room_choice">
 				<div class="room_image">
-					<img src="../upload/pic_trulli.jpg" style="min-width: 100%; min-height: 100%;">
+					<img src="../image/pic_trulli.jpg" style="min-width: 100%; min-height: 100%;">
 				</div>
 				<div class="room_info">
 					<p>주니어 스위트 룸</p>

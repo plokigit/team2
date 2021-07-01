@@ -8,10 +8,11 @@
 <meta charset="UTF-8">
 <style>
 .wrap {
-width:1000px;
-text-align: center;
-margin:0 50px;
-}
+		margin: 0px auto;
+		width: 1000px;
+		text-align: center;
+		position: relative;
+	}
 a{
 text-decoration: none;
 }
@@ -60,11 +61,11 @@ footer{
 </style>
 </head>
 <body>
-<div class="wrap">
 			<%@include file="top.jsp" %>
+<div class="wrap">
 		<nav>
 			<div class="main_image">
-  				<img src="../upload/pic_trulli.jpg" style="min-width: 100%; min-height: 100%;">
+  				<img src="../images/hotel_image_1.jpg" style="min-width: 100%; min-height: 100%; margin-top: -100px;">
 			</div>
 		</nav>
 		<br>

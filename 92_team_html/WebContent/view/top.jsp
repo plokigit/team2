@@ -12,6 +12,10 @@
       font-size: 12px;
       margin-right: 55px;
    }
+   #log a{
+      text-decoration: none;
+      color: white;
+   }
    
    .title{
       background-color: black;
@@ -20,8 +24,14 @@
    
    #logo{
          text-align: center;
-         margin-bottom: 50px;
+         margin: 30px 0 30px 0;
    }
+   	header{
+   		width: 100%;
+   		background-color: #6d5d95;
+   		margin: -100% -100% -50px -100%;
+   		padding: 100% 100% 50px 100%;
+   	}
 </style>
 </head>
 <body>
@@ -40,7 +50,7 @@
         </div>
         
      <p id="logo">
-        <img src="../upload/team_logo.png" alt="image" width="200px">
+        <img src="../images/team_logo.png" alt="image" width="200px">
      </p>
 		</header>
 </body>
